@@ -2,9 +2,9 @@ import {ADD_RECIPE, REMOVE_FROM_CALENDAR} from '../actions'
 
 const initialCalendarState = {
    sunday: {
-    breakfast: null,    l
+    breakfast: null,
     lunch: null,
-     dinner: null,
+    dinner: null,
    },
    monday: {
      breakfast: null,
