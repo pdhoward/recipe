@@ -1,5 +1,5 @@
 
-## Books App
+## Recipe App
 
 A simple app demonstrating the power of redux in state management
 
