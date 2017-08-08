@@ -6,9 +6,12 @@ import registerServiceWorker from './registerServiceWorker';
 import { createStore } from 'redux'
 import reducer from './reducers'
 
-const store = createStore(reducer)
+// passes in a function which says if the extension for redux is present on the window
+// object, then invoke it
+const store = createStore(
+  reducer,
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__() )
 
-console.log(store)
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(<App store={store}/>, document.getElementById('root'));
 registerServiceWorker();
