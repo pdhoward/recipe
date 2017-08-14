@@ -7,8 +7,7 @@ import { createStore, applyMiddleware, compose } from 'redux'
 import reducer from './reducers'
 import {Provider} from 'react-redux'
 
-// passes in a function which says if the extension for redux is present on the window
-// object, then invoke it
+
 const logger = store => next => action => {
   console.group(action.type)
   console.info('dispatching', action)
@@ -17,7 +16,8 @@ const logger = store => next => action => {
   console.groupEnd(action.type)
   return result
 }
-
+// passes in a function which says if the extension for redux is present on the window
+// object, then invoke it
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
 
 const store = createStore(
